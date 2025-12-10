@@ -9,7 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-class LionTest {
+class LionParameterizedTest {
 
     @Mock
     private Feline feline;
@@ -22,8 +22,6 @@ class LionTest {
     void testDoesHaveMane(String sex, boolean expectedResult) throws Exception {
         Lion lion = new Lion(sex, feline);
         boolean actualResult = lion.doesHaveMane();
-        assertEquals(expectedResult, actualResult, "Используйте допустимые значения пола животного");
+        assertEquals(expectedResult, actualResult, "Пол животного не соответствует ожидаемому");
     }
-
-
     }
